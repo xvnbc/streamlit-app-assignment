@@ -11,3 +11,8 @@ wheels/
 
 # Original case-study notebook
 analysis.ipynb
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+.DS_Store
