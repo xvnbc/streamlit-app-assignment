@@ -73,8 +73,8 @@ def dual_axis_chart(df: pd.DataFrame, x: str, title: str) -> go.Figure:
     )
     fig.update_yaxes(title_text="Rentals", secondary_y=False)
     fig.update_yaxes(title_text="Rented hours", secondary_y=True, showgrid=False)
-    fig.update_layout(title=title, legend=dict(
-        orientation="h", y=1.1), margin=dict(t=70))
+    fig.update_layout(title=title, legend={"orientation": "h", "y": 1.1},
+                      margin={"t": 70})
     return fig
 
 
