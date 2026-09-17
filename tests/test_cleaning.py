@@ -1,9 +1,11 @@
 import numpy as np
 import pandas as pd
 import pytest
+from conftest import make_raw
 
 from assignment_streamlit_app import cleaning
-from tests.conftest import NaN, make_raw
+
+NaN = np.nan
 
 
 def _row(df, vehicle, start):

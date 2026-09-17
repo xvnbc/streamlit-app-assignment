@@ -17,3 +17,4 @@ analysis.ipynb
 .ipynb_checkpoints
 
 .DS_Store
+.ruff_cache/
