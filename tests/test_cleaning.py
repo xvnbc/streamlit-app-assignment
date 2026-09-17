@@ -3,7 +3,7 @@ import pandas as pd
 import pytest
 
 from src import cleaning
-from src.cleaning import build_rental_dataset
+from assignment_streamlit_app.cleaning import build_rental_dataset
 from tests.conftest import NaN, make_raw
 
 

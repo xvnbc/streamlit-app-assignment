@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from src.loading import coerce_types
+from assignment_streamlit_app.loading import coerce_types
 
 NaN = np.nan
 
