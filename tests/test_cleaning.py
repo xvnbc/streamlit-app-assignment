@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from src import cleaning
-from assignment_streamlit_app.cleaning import build_rental_dataset
+
+from assignment_streamlit_app import cleaning
 from tests.conftest import NaN, make_raw
 
 
@@ -77,7 +77,7 @@ def test_energy_consumed_only_for_customers(raw_events):
 
 @pytest.fixture
 def dataset(raw_events):
-    return build_rental_dataset(raw_events)
+    return cleaning.build_rental_dataset(raw_events)
 
 
 @pytest.mark.parametrize(
@@ -127,11 +127,11 @@ def test_session_metrics_empty_for_non_charges(dataset):
 
 def test_pipeline_is_independent_of_input_order(raw_events):
     shuffled = raw_events.sample(frac=1, random_state=0)
-    pd.testing.assert_frame_equal(build_rental_dataset(
-        raw_events), build_rental_dataset(shuffled))
+    pd.testing.assert_frame_equal(cleaning.build_rental_dataset(
+        raw_events), cleaning.build_rental_dataset(shuffled))
 
 
 def test_pipeline_does_not_modify_input(raw_events):
     before = raw_events.copy()
-    build_rental_dataset(raw_events)
+    cleaning.build_rental_dataset(raw_events)
     pd.testing.assert_frame_equal(raw_events, before)
